@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Support and frequently asked questions for SafeRoute — crime-aware walking navigation for the UK.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#052926">
+<title>SafeRoute — Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F4F0E6;
+    --bg-panel: #EAE4D2;
+    --ink: #052926;
+    --ink-soft: #57534E;
+    --accent: #3B7E76;
+    --accent-strong: #2A5C56;
+    --warn: #A8492B;
+    --rule: rgba(5, 41, 38, 0.14);
+    --rule-strong: rgba(5, 41, 38, 0.32);
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 28px 96px;
+  }
+
+  /* HEADER */
+
+  .brand {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule-strong);
+    margin-bottom: 56px;
+  }
+
+  .brand .name {
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  .brand .sep {
+    color: var(--accent);
+    margin: 0 4px;
+  }
+
+  .category {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  h1.doctitle {
+    font-family: var(--sans);
+    font-size: clamp(40px, 7vw, 60px);
+    line-height: 1.04;
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    margin: 0 0 36px;
+    color: var(--ink);
+  }
+
+  /* META BLOCK */
+
+  .meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 24px;
+    padding: 18px 0 22px;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 48px;
+    font-size: 14.5px;
+  }
+
+  .meta dt {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    align-self: baseline;
+  }
+
+  .meta dd {
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .meta dd a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 3px;
+  }
+
+  /* SECTIONS */
+
+  section {
+    margin-bottom: 56px;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.25;
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  h2 .num {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    padding: 3px 7px;
+    background: rgba(59, 126, 118, 0.12);
+    border-radius: 3px;
+    align-self: center;
+  }
+
+  h3 {
+    font-family: var(--sans);
+    font-size: 17px;
+    font-weight: 600;
+    margin: 28px 0 10px;
+    color: var(--ink);
+  }
+
+  p {
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--accent-strong);
+    text-decoration: underline;
+    text-decoration-color: rgba(59, 126, 118, 0.5);
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  code, .mono {
+    font-family: var(--mono);
+    font-size: 0.92em;
+    background: var(--bg-panel);
+    padding: 1px 6px;
+    border-radius: 3px;
+    color: var(--ink);
+  }
+
+  strong { font-weight: 600; }
+
+  /* CALLOUT */
+
+  .callout {
+    background: var(--bg-panel);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 18px 0;
+    border-radius: 0 4px 4px 0;
+    font-size: 15.5px;
+  }
+
+  .callout .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* TABLES */
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0 20px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  th {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: var(--bg-panel);
+  }
+
+  td .label-pill {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+
+  .pill-yes  { background: rgba(59, 126, 118, 0.16); color: var(--accent-strong); }
+  .pill-no   { background: rgba(168, 73, 43, 0.14); color: var(--warn); }
+  .pill-warn { background: rgba(168, 73, 43, 0.08); color: var(--warn); }
+
+  /* FAQ */
+
+  .faq h3 {
+    margin-top: 26px;
+  }
+
+  .faq h3::before {
+    content: "Q.";
+    font-family: var(--mono);
+    color: var(--accent);
+    margin-right: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+  }
+
+  /* LISTS */
+
+  ul, ol {
+    padding-left: 22px;
+    margin: 8px 0 14px;
+  }
+
+  li {
+    margin-bottom: 6px;
+  }
+
+  ul li::marker {
+    color: var(--accent);
+  }
+
+  /* FOOTER */
+
+  .end-marker {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 72px 0 20px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule-strong);
+  }
+
+  footer.disclaimer {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    padding-top: 14px;
+  }
+
+  footer.disclaimer a {
+    color: var(--ink-soft);
+    text-decoration-color: var(--rule-strong);
+  }
+
+  /* MOBILE */
+
+  @media (max-width: 560px) {
+    .container { padding: 40px 20px 80px; }
+    body { font-size: 16px; }
+    h2 { font-size: 21px; }
+    .meta { grid-template-columns: 1fr; gap: 2px 0; padding: 16px 0; }
+    .meta dt { margin-top: 10px; }
+    .meta dt:first-child { margin-top: 0; }
+  }
+
+  /* PRINT */
+
+  @media print {
+    body { background: white; }
+    .container { max-width: none; padding: 0; }
+    a { color: var(--ink); }
+  }
+
+  /* Reduce motion respect */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<main class="container">
+
+<div class="brand">
+  <span class="name">SAFEROUTE</span><span class="sep">//</span> Crime-Aware Walking Navigator <span class="sep">·</span> UK
+</div>
+
+<div class="category">// Help · Support</div>
+<h1 class="doctitle">Support</h1>
+
+<dl class="meta">
+  <dt>Updated</dt><dd>12 May 2026</dd>
+  <dt>Contact</dt><dd><a href="mailto:minhaj@safe-route.app">minhaj@safe-route.app</a></dd>
+  <dt>Response time</dt><dd>Typically within 48 hours</dd>
+  <dt>Maintainer</dt><dd>Minhaj Khan</dd>
+</dl>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="contact">
+  <h2><span class="num">01</span> Get in touch</h2>
+  <p>SafeRoute is built and maintained by one person, so support runs over email — no chatbots, no ticket queue, no phone line. Messages go to me directly and I aim to reply within 48 hours.</p>
+  <p>To help me triage faster, please use a clear subject line:</p>
+  <ul>
+    <li><code>Bug report</code> — something broke or behaved unexpectedly</li>
+    <li><code>Feature request</code> — something you'd like to see added</li>
+    <li><code>Privacy request</code> — data subject rights under UK GDPR</li>
+    <li><code>General</code> — anything else</li>
+  </ul>
+  <div class="callout">
+    <span class="label">Email</span>
+    <a href="mailto:minhaj@safe-route.app"><strong>minhaj@safe-route.app</strong></a>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="coverage">
+  <h2><span class="num">02</span> Where SafeRoute works</h2>
+  <p>SafeRoute's safety scoring is built on data published by <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>. Coverage therefore tracks the forces that publish to that platform.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Region</th><th>Status</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>England</strong></td>
+          <td><span class="label-pill pill-yes">Supported</span></td>
+          <td>All 39 territorial forces, plus the British Transport Police.</td>
+        </tr>
+        <tr>
+          <td><strong>Wales</strong></td>
+          <td><span class="label-pill pill-yes">Supported</span></td>
+          <td>All four Welsh forces publish to data.police.uk.</td>
+        </tr>
+        <tr>
+          <td><strong>Northern Ireland</strong></td>
+          <td><span class="label-pill pill-warn">Partial</span></td>
+          <td>PSNI data is published but with a longer lag than English/Welsh forces.</td>
+        </tr>
+        <tr>
+          <td><strong>Scotland</strong></td>
+          <td><span class="label-pill pill-no">Not yet</span></td>
+          <td>Police Scotland does not currently publish to data.police.uk. Routing still works in Scottish cities, but safety scoring is unavailable.</td>
+        </tr>
+        <tr>
+          <td><strong>Outside the UK</strong></td>
+          <td><span class="label-pill pill-no">Not supported</span></td>
+          <td>Routing is restricted to UK coordinates by design.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>If you see <code>0 incidents loaded</code>, the most common reasons are: you're in Scotland or outside the UK, your device has no internet, or the data.police.uk service is experiencing a temporary outage.</p>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="faq" class="faq">
+  <h2><span class="num">03</span> Frequently asked questions</h2>
+
+  <h3>Why is my safety score so low?</h3>
+  <p>The score weights nearby reported incidents by severity and proximity within a 150-metre corridor around your route, drawing on the last 12 months of published data. A score of 39%, for example, means the route runs through areas with a moderate density of recent incidents — it's an aggregate of historical reports, not a prediction of what will happen on your walk.</p>
+
+  <h3>The same route shows different scores at different times — why?</h3>
+  <p>data.police.uk publishes a new dataset on the last working day of each month, covering incidents from roughly two months earlier. Your score changes when the underlying data is refreshed, or when more or fewer reports are filed in your area. Time-of-day weighting also nudges the score based on aggregate UK Crime Survey patterns.</p>
+
+  <h3>How fresh is the crime data?</h3>
+  <p>data.police.uk releases monthly, with approximately a two-month publishing lag. SafeRoute pulls the most recent release available, and your device caches it locally so the app works smoothly between updates.</p>
+
+  <h3>Why does my Apple Watch say "waiting for iPhone"?</h3>
+  <p>The watch app communicates with the iPhone via Apple's WatchConnectivity framework. Try:</p>
+  <ul>
+    <li>Unlock both your iPhone and your Watch</li>
+    <li>Make sure Bluetooth is on (or both devices are on the same Wi-Fi)</li>
+    <li>Open SafeRoute on iPhone once — this wakes the connection</li>
+    <li>Pull-to-refresh on the watch screen</li>
+  </ul>
+
+  <h3>My share link expired — what happened?</h3>
+  <p>Share links auto-expire to protect your privacy. They end automatically when:</p>
+  <ul>
+    <li>You mark your walk as arrived</li>
+    <li>Four hours pass since the link was created — whichever comes first</li>
+  </ul>
+  <p>Once expired, the page tells your recipient the walk has ended. Create a new link from the route screen if you want to continue sharing.</p>
+
+  <h3>The Live Activity disappeared from my Lock Screen</h3>
+  <p>iOS imposes an eight-hour hard limit on Live Activities and ends them automatically at that point. They can also be dismissed by swiping. SafeRoute will only restart the Live Activity when you begin a new route — it won't re-add itself to a dismissed Lock Screen during an active walk.</p>
+
+  <h3>Can I use SafeRoute offline?</h3>
+  <p>Not yet. SafeRoute needs internet for routing, search, safety data, and share sessions. The map will keep showing tiles it has already loaded, but a fresh route plan won't be possible without a connection. We're exploring offline tile caching for a future release.</p>
+
+  <h3>How do I delete my data?</h3>
+  <p>Uninstall the app. SafeRoute doesn't use accounts, persistent identifiers, or stored profiles, so removing the app removes everything held on your device. The backend keeps anonymous request logs for up to 30 days for abuse prevention, then deletes them automatically. See the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> for full detail.</p>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="troubleshooting">
+  <h2><span class="num">04</span> Troubleshooting</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th style="width: 36%">Symptom</th><th>Try this</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>0 incidents loaded</strong> on a UK route</td>
+          <td>Check your internet connection. If you're in Scotland, this is expected — Police Scotland does not publish to data.police.uk. In England, Wales, or NI, the most likely cause is a temporary data.police.uk outage; try again in a few minutes.</td>
+        </tr>
+        <tr>
+          <td><strong>Search returns no results</strong> for a place you know exists</td>
+          <td>Try a more specific name — a street, postcode, or landmark. Search uses OpenStreetMap; obscure points of interest may not be indexed. Postcodes are usually most reliable.</td>
+        </tr>
+        <tr>
+          <td><strong>Off-route alerts not firing</strong></td>
+          <td>SafeRoute needs background location access to detect deviations. Go to <em>Settings → SafeRoute → Location</em> and ensure it's set to <em>Always</em>. On the Watch, ensure motion permissions are granted.</td>
+        </tr>
+        <tr>
+          <td><strong>App crashes immediately on launch</strong></td>
+          <td>Force-quit (swipe up from the app switcher) and re-open. If the crash persists, email us with your device model and iOS version so we can investigate.</td>
+        </tr>
+        <tr>
+          <td><strong>Recipient of share link sees stale location</strong></td>
+          <td>The recipient must keep the link page open in their browser. iOS Safari can throttle background tabs after some time. Asking the recipient to keep the tab visible (or to tap refresh) usually fixes this.</td>
+        </tr>
+        <tr>
+          <td><strong>Route looks identical with and without safety on</strong></td>
+          <td>In low-density areas, the safest path and the shortest path are often the same. The app shows multiple candidates labelled <em>Best Overall</em>, <em>Safest</em>, and <em>Fastest</em> — compare the safety scores to see the trade-off.</td>
+        </tr>
+        <tr>
+          <td><strong>"Unauthorized" error on share link</strong></td>
+          <td>Older share links created before May 2026 may not work after our backend security update. Create a fresh link from the app.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="bugs">
+  <h2><span class="num">05</span> Reporting a bug</h2>
+  <p>Bug reports are extraordinarily helpful — they're often the only way I find out something is broken. To make a report actionable, please include:</p>
+  <ul>
+    <li><strong>Device model</strong> — <em>Settings → General → About → Model Name</em></li>
+    <li><strong>iOS / watchOS version</strong> — <em>Settings → General → About → Software Version</em></li>
+    <li><strong>SafeRoute version</strong> — visible at the bottom of the in-app info screen (tap <em>ⓘ</em> on the main planner)</li>
+    <li><strong>What you were doing</strong> when the issue happened</li>
+    <li><strong>What you expected</strong> versus <strong>what actually happened</strong></li>
+    <li><strong>A screenshot or screen recording</strong> if you have one</li>
+    <li><strong>Approximate time</strong> of the issue (helps me check backend logs)</li>
+  </ul>
+
+  <div class="callout">
+    <span class="label">Send to</span>
+    <a href="mailto:minhaj@safe-route.app?subject=Bug%20report"><strong>minhaj@safe-route.app</strong></a> · subject: <code>Bug report</code>
+  </div>
+
+  <p>If your bug relates to share links, please include the link URL — those are anonymous and don't contain personal data.</p>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="features">
+  <h2><span class="num">06</span> Requesting a feature</h2>
+  <p>Every feature request gets read. SafeRoute deliberately does not run analytics or in-app feedback prompts, so direct email is your only voice into the roadmap.</p>
+  <p>It helps to describe the <em>problem</em> you're trying to solve, not just the solution you have in mind — sometimes a small adjustment to an existing feature solves the same problem more cleanly than a brand-new one.</p>
+
+  <div class="callout">
+    <span class="label">Send to</span>
+    <a href="mailto:minhaj@safe-route.app?subject=Feature%20request"><strong>minhaj@safe-route.app</strong></a> · subject: <code>Feature request</code>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="privacy">
+  <h2><span class="num">07</span> Privacy and your data</h2>
+  <p>SafeRoute does not require accounts, store personal identifiers, or run trackers. For full detail on what we process and your rights under UK GDPR, see the privacy policy.</p>
+  <p><a href="https://minhajk21.github.io/saferoute-privacy/"><strong>Read the privacy policy →</strong></a></p>
+  <p>For data subject access requests, deletion requests, or anything else covered by UK GDPR, email with the subject <code>Privacy request</code> and we'll respond within one calendar month.</p>
+</section>
+
+<!-- ─────────────────────────────────────────────────────── -->
+<section id="status">
+  <h2><span class="num">08</span> Service status</h2>
+  <p>SafeRoute depends on a small number of upstream services. If routing or safety data breaks across the app for many users at once, the cause is almost always one of these:</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Provider</th><th>What it powers</th><th>Status page</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Mapbox</strong></td>
+          <td>Map tiles, routing, turn-by-turn navigation</td>
+          <td><a href="https://status.mapbox.com" target="_blank" rel="noopener">status.mapbox.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>data.police.uk</strong></td>
+          <td>UK crime statistics</td>
+          <td><a href="https://data.police.uk/changelog/" target="_blank" rel="noopener">data.police.uk/changelog</a></td>
+        </tr>
+        <tr>
+          <td><strong>OpenStreetMap Nominatim</strong></td>
+          <td>Place and address search</td>
+          <td><a href="https://operations.osmfoundation.org/" target="_blank" rel="noopener">operations.osmfoundation.org</a></td>
+        </tr>
+        <tr>
+          <td><strong>Render</strong></td>
+          <td>SafeRoute backend hosting</td>
+          <td><a href="https://status.render.com" target="_blank" rel="noopener">status.render.com</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>If you experience a sudden, widespread issue, checking these status pages first can save you from waiting on a reply. If a disruption lasts more than an hour, I'll post an update here.</p>
+</section>
+
+<div class="end-marker">// End of support</div>
+
+<footer class="disclaimer">
+  This support page was last reviewed on 12 May 2026. SafeRoute is an independent project and is not affiliated with the UK Government, Police Scotland, OpenStreetMap, Mapbox, Apple, or any other named party. Crime data is sourced from <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a> under the Open Government Licence v3.0.
+</footer>
+
+</main>
+
+</body>
+</html>
