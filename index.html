@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Support and frequently asked questions for SafeRoute — crime-aware walking navigation for the UK.">
+<meta name="description" content="Support and frequently asked questions for SafeRoute — crime-aware walking navigation for the UK and major US cities.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#052926">
 <title>SafeRoute — Support</title>
@@ -351,14 +351,14 @@
 <main class="container">
 
 <div class="brand">
-  <span class="name">SAFEROUTE</span><span class="sep">//</span> Crime-Aware Walking Navigator <span class="sep">·</span> UK
+  <span class="name">SAFEROUTE</span><span class="sep">//</span> Crime-Aware Walking Navigator <span class="sep">·</span> UK &amp; US
 </div>
 
 <div class="category">// Help · Support</div>
 <h1 class="doctitle">Support</h1>
 
 <dl class="meta">
-  <dt>Updated</dt><dd>12 May 2026</dd>
+  <dt>Updated</dt><dd>14 June 2026</dd>
   <dt>Contact</dt><dd><a href="mailto:minhaj@safe-route.app">minhaj@safe-route.app</a></dd>
   <dt>Response time</dt><dd>Typically within 48 hours</dd>
   <dt>Maintainer</dt><dd>Minhaj Khan</dd>
@@ -384,8 +384,9 @@
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="coverage">
   <h2><span class="num">02</span> Where SafeRoute works</h2>
-  <p>SafeRoute's safety scoring is built on data published by <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>. Coverage therefore tracks the forces that publish to that platform.</p>
+  <p>SafeRoute adapts to wherever you are. In the United Kingdom, safety scoring is built on <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>; in the United States, it uses each covered city's official open crime data. The app automatically picks the right source, emergency number (999 / 911), and safe-place data for your location.</p>
 
+  <h3>United Kingdom</h3>
   <div class="table-wrap">
     <table>
       <thead>
@@ -412,16 +413,30 @@
           <td><span class="label-pill pill-no">Not yet</span></td>
           <td>Police Scotland does not currently publish to data.police.uk. Routing still works in Scottish cities, but safety scoring is unavailable.</td>
         </tr>
-        <tr>
-          <td><strong>Outside the UK</strong></td>
-          <td><span class="label-pill pill-no">Not supported</span></td>
-          <td>Routing is restricted to UK coordinates by design.</td>
-        </tr>
       </tbody>
     </table>
   </div>
 
-  <p>If you see <code>0 incidents loaded</code>, the most common reasons are: you're in Scotland or outside the UK, your device has no internet, or the data.police.uk service is experiencing a temporary outage.</p>
+  <h3>United States</h3>
+  <p>US coverage is city-by-city — each city publishes its own crime data, so safety scoring is available within these cities:</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>City</th><th>Status</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>New York</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>NYPD via NYC Open Data</td></tr>
+        <tr><td><strong>Chicago</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>Chicago Police via Chicago Data Portal</td></tr>
+        <tr><td><strong>San Francisco</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>SFPD via DataSF</td></tr>
+        <tr><td><strong>Boston</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>Boston PD via Analyze Boston</td></tr>
+        <tr><td><strong>Seattle</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>SPD via Seattle Open Data</td></tr>
+        <tr><td><strong>Philadelphia</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>Philadelphia PD via OpenDataPhilly</td></tr>
+        <tr><td><strong>Washington, D.C.</strong></td><td><span class="label-pill pill-yes">Supported</span></td><td>MPD via Open Data DC</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Outside a covered UK region or US city, routing and search may still work, but safety scoring won't be available. If you see <code>0 incidents loaded</code>, the most common reasons are: you're outside a covered area (e.g. Scotland, or a US city we don't yet cover), your device has no internet, or the upstream crime-data service is experiencing a temporary outage.</p>
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
@@ -432,10 +447,10 @@
   <p>The score weights nearby reported incidents by severity and proximity within a 150-metre corridor around your route, drawing on the last 12 months of published data. A score of 39%, for example, means the route runs through areas with a moderate density of recent incidents — it's an aggregate of historical reports, not a prediction of what will happen on your walk.</p>
 
   <h3>The same route shows different scores at different times — why?</h3>
-  <p>data.police.uk publishes a new dataset on the last working day of each month, covering incidents from roughly two months earlier. Your score changes when the underlying data is refreshed, or when more or fewer reports are filed in your area. Time-of-day weighting also nudges the score based on aggregate UK Crime Survey patterns.</p>
+  <p>In the UK, data.police.uk publishes a new dataset on the last working day of each month, covering incidents from roughly two months earlier. US city portals update on their own schedules — typically far more frequently. Your score changes when the underlying data is refreshed, or when more or fewer reports are filed in your area. Time-of-day weighting also nudges the score — from each US city's actual reported incident times where available, or an aggregate-pattern heuristic in the UK.</p>
 
   <h3>How fresh is the crime data?</h3>
-  <p>data.police.uk releases monthly, with approximately a two-month publishing lag. SafeRoute pulls the most recent release available, and your device caches it locally so the app works smoothly between updates.</p>
+  <p>It depends on the source. data.police.uk (UK) releases monthly, with roughly a two-month publishing lag. US city open-data portals generally update more often — many daily or weekly. SafeRoute always pulls the most recent data available for your location, and your device caches it locally so the app works smoothly between updates.</p>
 
   <h3>Why does my Apple Watch say "waiting for iPhone"?</h3>
   <p>The watch app communicates with the iPhone via Apple's WatchConnectivity framework. Try:</p>
@@ -475,12 +490,12 @@
       </thead>
       <tbody>
         <tr>
-          <td><strong>0 incidents loaded</strong> on a UK route</td>
-          <td>Check your internet connection. If you're in Scotland, this is expected — Police Scotland does not publish to data.police.uk. In England, Wales, or NI, the most likely cause is a temporary data.police.uk outage; try again in a few minutes.</td>
+          <td><strong>0 incidents loaded</strong> in a covered area</td>
+          <td>Check your internet connection. If you're in Scotland or outside a covered US city, this is expected — there's no crime data to score. In a covered area, the most likely cause is a temporary outage of the upstream crime-data service; try again in a few minutes.</td>
         </tr>
         <tr>
           <td><strong>Search returns no results</strong> for a place you know exists</td>
-          <td>Try a more specific name — a street, postcode, or landmark. Search uses OpenStreetMap; obscure points of interest may not be indexed. Postcodes are usually most reliable.</td>
+          <td>Try a more specific name — a street, postcode/ZIP, or landmark. Search uses Mapbox geocoding, biased to your region; obscure points of interest may not be indexed. Postcodes and ZIP codes are usually most reliable.</td>
         </tr>
         <tr>
           <td><strong>Off-route alerts not firing</strong></td>
@@ -496,7 +511,7 @@
         </tr>
         <tr>
           <td><strong>Route looks identical with and without safety on</strong></td>
-          <td>In low-density areas, the safest path and the shortest path are often the same. The app shows multiple candidates labelled <em>Best Overall</em>, <em>Safest</em>, and <em>Fastest</em> — compare the safety scores to see the trade-off.</td>
+          <td>In low-density areas, the safest path and the shortest path are often the same. The app shows multiple candidates labelled <em>Recommended</em>, <em>Safest</em>, and <em>Shortest Path</em> — compare the safety scores to see the trade-off.</td>
         </tr>
         <tr>
           <td><strong>"Unauthorized" error on share link</strong></td>
@@ -562,7 +577,7 @@
       <tbody>
         <tr>
           <td><strong>Mapbox</strong></td>
-          <td>Map tiles, routing, turn-by-turn navigation</td>
+          <td>Map tiles, routing, turn-by-turn navigation, and place search</td>
           <td><a href="https://status.mapbox.com" target="_blank" rel="noopener">status.mapbox.com</a></td>
         </tr>
         <tr>
@@ -571,8 +586,13 @@
           <td><a href="https://data.police.uk/changelog/" target="_blank" rel="noopener">data.police.uk/changelog</a></td>
         </tr>
         <tr>
-          <td><strong>OpenStreetMap Nominatim</strong></td>
-          <td>Place and address search</td>
+          <td><strong>US city open-data portals</strong></td>
+          <td>US crime statistics (NYC Open Data, Chicago Data Portal, DataSF, Analyze Boston, Seattle Open Data, OpenDataPhilly, Open Data DC)</td>
+          <td>Varies by city</td>
+        </tr>
+        <tr>
+          <td><strong>OpenStreetMap (Overpass)</strong></td>
+          <td>Safe-place lookups (Find Help) and street-lighting data</td>
           <td><a href="https://operations.osmfoundation.org/" target="_blank" rel="noopener">operations.osmfoundation.org</a></td>
         </tr>
         <tr>
@@ -590,7 +610,7 @@
 <div class="end-marker">// End of support</div>
 
 <footer class="disclaimer">
-  This support page was last reviewed on 12 May 2026. SafeRoute is an independent project and is not affiliated with the UK Government, Police Scotland, OpenStreetMap, Mapbox, Apple, or any other named party. Crime data is sourced from <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a> under the Open Government Licence v3.0.
+  This support page was last reviewed on 14 June 2026. SafeRoute is an independent project and is not affiliated with the UK Government, Police Scotland, the NYPD or other US police departments, OpenStreetMap, Mapbox, Apple, or any other named party. UK crime data is sourced from <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a> under the Open Government Licence v3.0; US crime data comes from each city's official municipal open-data portal.
 </footer>
 
 </main>
