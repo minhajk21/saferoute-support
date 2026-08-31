@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Support and frequently asked questions for SafeRoute — crime-aware walking navigation for the UK, US cities, Canada, and Mexico City.">
+<meta name="description" content="Support and frequently asked questions for SafeRoute — crime-aware walking navigation for the UK, US cities, Canada, and Mexico City. Coverage tables, the Live tab, safety alerts, and troubleshooting.">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#052926">
 <title>SafeRoute — Support</title>
@@ -358,7 +358,7 @@
 <h1 class="doctitle">Support</h1>
 
 <dl class="meta">
-  <dt>Updated</dt><dd>26 June 2026</dd>
+  <dt>Updated</dt><dd>30 August 2026</dd>
   <dt>Contact</dt><dd><a href="mailto:minhaj@safe-route.app">minhaj@safe-route.app</a></dd>
   <dt>Response time</dt><dd>Typically within 48 hours</dd>
   <dt>Maintainer</dt><dd>Minhaj Khan</dd>
@@ -385,6 +385,7 @@
 <section id="coverage">
   <h2><span class="num">02</span> Where SafeRoute works</h2>
   <p>SafeRoute adapts to wherever you are. In the United Kingdom, safety scoring is built on <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>; in the United States and Canada, it uses each covered city's official open crime data; in Mexico City it uses the public prosecutor's (FGJ) open crime data. The app automatically picks the right source, emergency number (999 in the UK, 911 in the US, Canada and Mexico), and safe-place data for your location. The app is available in English and Spanish (Spanish on Spanish-language devices).</p>
+  <p>Safety scoring is available in every city listed below. The <a href="#live">Live tab</a> &mdash; recent 911 calls and live street cameras &mdash; is a separate, smaller list, because it depends on a city publishing a live feed rather than periodic crime reports.</p>
 
   <h3>United Kingdom</h3>
   <div class="table-wrap">
@@ -484,8 +485,90 @@
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
+<section id="live">
+  <h2><span class="num">03</span> The Live tab</h2>
+  <p>The Live tab is a dark 3D map of what has happened near you recently. It shows two different things, and they are deliberately kept separate from your safety score: <strong>nothing on the Live tab affects any score anywhere in the app.</strong> The safety index is built from police <em>reports</em>; the Live tab shows <em>dispatch calls</em> and camera imagery, which are a different kind of record and are not comparable.</p>
+  <p>The Live tab only appears where we have a feed for it. In every other covered city the rest of the app works normally — there is simply nothing live to show, and we would rather show nothing than imply a quiet night we cannot evidence.</p>
+
+  <h3>911 calls police responded to</h3>
+  <p>Glowing markers ("embers") are <strong>calls that police were dispatched to</strong> — not confirmed crimes. A call can turn out to be a misunderstanding, a duplicate, or nothing at all. We filter out call types that are not offences against a person or property, and we deliberately exclude categories where a marker would say more about who was reported than about what happened — mental-health and welfare calls, "suspicious person" reports, and calls about unhoused people are never shown.</p>
+  <p>Tap an ember for the call type and how long ago it was.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>City</th><th>How often it updates</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>San Francisco</strong></td>
+          <td><span class="label-pill pill-yes">Near real-time</span></td>
+          <td>SFPD dispatched calls via DataSF. Some sensitive calls have their location withheld by SFPD, so the map under-counts by design.</td>
+        </tr>
+        <tr>
+          <td><strong>Cleveland</strong></td>
+          <td><span class="label-pill pill-yes">Updated during the day</span></td>
+          <td>Cleveland Division of Police CAD</td>
+        </tr>
+        <tr>
+          <td><strong>New Orleans</strong></td>
+          <td><span class="label-pill pill-warn">Updated nightly</span></td>
+          <td>OPCD Calls for Service via data.nola.gov. Loads in a nightly batch, so by evening the newest call you can see may be around 20 hours old.</td>
+        </tr>
+        <tr>
+          <td><strong>Minneapolis</strong></td>
+          <td><span class="label-pill pill-warn">Published each morning</span></td>
+          <td>Minneapolis 911 dispatch (MPD). Published mid-morning covering the previous day, so this city shows a 48-hour window rather than 24 — otherwise the map would be empty for part of every day.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Live street cameras</h3>
+  <p>Camera pins show the latest public view from a road authority's own traffic cameras. Images are fetched by our server, not by your phone, and no camera can be controlled from the app. These are the same public feeds the authorities publish themselves.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>City</th><th>What you get</th><th>Source and licence</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>London</strong></td>
+          <td>Short video clips, refreshing about every 2 minutes</td>
+          <td>Powered by TfL Open Data</td>
+        </tr>
+        <tr>
+          <td><strong>New York</strong></td>
+          <td>Stills, refreshing about every minute</td>
+          <td>Camera imagery: 511NY / New York State Department of Transportation</td>
+        </tr>
+        <tr>
+          <td><strong>Las Vegas</strong></td>
+          <td>Stills, refreshing about every minute</td>
+          <td>Camera imagery: Nevada Department of Transportation</td>
+        </tr>
+        <tr>
+          <td><strong>Toronto</strong></td>
+          <td>Stills, refreshing every few minutes</td>
+          <td>Contains information licensed under the Open Government Licence &ndash; Toronto</td>
+        </tr>
+        <tr>
+          <td><strong>Vancouver</strong></td>
+          <td>Stills, refreshing every few minutes</td>
+          <td>Contains information licensed under the Open Government Licence &ndash; Vancouver</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Camera coverage is uneven by design — these are traffic cameras, so they cluster on main roads and junctions rather than spreading evenly across residential streets.</p>
+
+  <h3>Safety alerts</h3>
+  <p>Alerts are <strong>optional and off until you turn them on</strong>. You can enable them from the Live tab or from About &rarr; Safety alerts. There are two kinds: a heads-up when you walk into a block where reported incidents run well above the local average, and — in cities with a live dispatch feed — an occasional check for serious 911 calls within a few blocks.</p>
+  <p>An alert names the street it fired on, says how unusual the area is, and shows a map of the block when you pull the notification down. Two actions are attached: open that area in the app, or go quiet until midnight.</p>
+  <p>All of this runs on your phone. Your location is never sent to our servers to produce an alert, and alerts fire on entering an area, so they cannot be triggered on demand from a standing start.</p>
+</section>
+
 <section id="faq" class="faq">
-  <h2><span class="num">03</span> Frequently asked questions</h2>
+  <h2><span class="num">04</span> Frequently asked questions</h2>
 
   <h3>Why is my safety score so low?</h3>
   <p>The score weights nearby reported incidents by severity and proximity within a 150-metre corridor around your route, drawing on the last 12 months of published data. A score of 39%, for example, means the route runs through areas with a moderate density of recent incidents — it's an aggregate of historical reports, not a prediction of what will happen on your walk.</p>
@@ -495,6 +578,16 @@
 
   <h3>How fresh is the crime data?</h3>
   <p>It depends on the source. data.police.uk (UK) releases monthly, with roughly a two-month publishing lag. US city open-data portals generally update more often — many daily or weekly. SafeRoute always pulls the most recent data available for your location, and your device caches it locally so the app works smoothly between updates.</p>
+
+  <h3>I don't have a Live tab, or it says there's nothing to show</h3>
+  <p>The Live tab appears only in cities where a police force or road authority publishes a live feed we can use — the two tables in <a href="#live">section 03</a> list every one of them. Everywhere else the tab is hidden and the rest of the app works normally.</p>
+  <p>If the tab is there but the map is empty, that is a genuine result and not a failure: no qualifying calls came in during the window. If a feed cannot be reached at all we say "couldn't load" instead, precisely so an outage is never mistaken for a quiet night.</p>
+
+  <h3>Are the dots on the Live map actual crimes?</h3>
+  <p>No. They are <strong>calls that police were dispatched to</strong>, which is a record of what someone reported and where a unit was sent — not a confirmation that an offence occurred. That is why they are labelled as calls throughout, and why they are never included in any safety score.</p>
+
+  <h3>How do I turn safety alerts off?</h3>
+  <p>About &rarr; Safety alerts, and switch them off. They are off by default, so you only have them if you turned them on. To silence them just for the rest of the day, pull down any alert and choose "Quiet for today" — that mutes both kinds until midnight without changing your setting.</p>
 
   <h3>Why does my Apple Watch say "waiting for iPhone"?</h3>
   <p>The watch app communicates with the iPhone via Apple's WatchConnectivity framework. Try:</p>
@@ -525,7 +618,7 @@
 
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="troubleshooting">
-  <h2><span class="num">04</span> Troubleshooting</h2>
+  <h2><span class="num">05</span> Troubleshooting</h2>
 
   <div class="table-wrap">
     <table>
@@ -568,7 +661,7 @@
 
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="bugs">
-  <h2><span class="num">05</span> Reporting a bug</h2>
+  <h2><span class="num">06</span> Reporting a bug</h2>
   <p>Bug reports are extraordinarily helpful — they're often the only way I find out something is broken. To make a report actionable, please include:</p>
   <ul>
     <li><strong>Device model</strong> — <em>Settings → General → About → Model Name</em></li>
@@ -590,7 +683,7 @@
 
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="features">
-  <h2><span class="num">06</span> Requesting a feature</h2>
+  <h2><span class="num">07</span> Requesting a feature</h2>
   <p>Every feature request gets read. SafeRoute deliberately does not run analytics or in-app feedback prompts, so direct email is your only voice into the roadmap.</p>
   <p>It helps to describe the <em>problem</em> you're trying to solve, not just the solution you have in mind — sometimes a small adjustment to an existing feature solves the same problem more cleanly than a brand-new one.</p>
 
@@ -602,7 +695,7 @@
 
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="privacy">
-  <h2><span class="num">07</span> Privacy and your data</h2>
+  <h2><span class="num">08</span> Privacy and your data</h2>
   <p>SafeRoute does not require accounts, store personal identifiers, or run trackers. For full detail on what we process and your rights under UK GDPR, see the privacy policy.</p>
   <p><a href="https://minhajk21.github.io/saferoute-privacy/"><strong>Read the privacy policy →</strong></a></p>
   <p>For data subject access requests, deletion requests, or anything else covered by UK GDPR, email with the subject <code>Privacy request</code> and we'll respond within one calendar month.</p>
@@ -610,7 +703,7 @@
 
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="status">
-  <h2><span class="num">08</span> Service status</h2>
+  <h2><span class="num">09</span> Service status</h2>
   <p>SafeRoute depends on a small number of upstream services. If routing or safety data breaks across the app for many users at once, the cause is almost always one of these:</p>
 
   <div class="table-wrap">
@@ -638,6 +731,16 @@
           <td><strong>Hoyo de Crimen</strong></td>
           <td>Mexico City crime statistics (FGJ open data)</td>
           <td><a href="https://hoyodecrimen.com" target="_blank" rel="noopener">hoyodecrimen.com</a></td>
+        </tr>
+        <tr>
+          <td><strong>Police dispatch feeds</strong></td>
+          <td>The Live tab's 911 call markers (DataSF, Cleveland Division of Police, data.nola.gov, and the City of Minneapolis)</td>
+          <td>Varies by city</td>
+        </tr>
+        <tr>
+          <td><strong>Road-authority camera feeds</strong></td>
+          <td>Live street cameras (Transport for London, 511NY / NYSDOT, Nevada DOT, and the cities of Toronto and Vancouver)</td>
+          <td>Varies by city</td>
         </tr>
         <tr>
           <td><strong>OpenStreetMap (Overpass)</strong></td>
