@@ -358,7 +358,7 @@
 <h1 class="doctitle">Support</h1>
 
 <dl class="meta">
-  <dt>Updated</dt><dd>30 August 2026</dd>
+  <dt>Updated</dt><dd>4 September 2026</dd>
   <dt>Contact</dt><dd><a href="mailto:minhaj@safe-route.app">minhaj@safe-route.app</a></dd>
   <dt>Response time</dt><dd>Typically within 48 hours</dd>
   <dt>Maintainer</dt><dd>Minhaj Khan</dd>
@@ -493,6 +493,7 @@
   <h3>911 calls police responded to</h3>
   <p>Glowing markers ("embers") are <strong>calls that police were dispatched to</strong> — not confirmed crimes. A call can turn out to be a misunderstanding, a duplicate, or nothing at all. We filter out call types that are not offences against a person or property, and we deliberately exclude categories where a marker would say more about who was reported than about what happened — mental-health and welfare calls, "suspicious person" reports, and calls about unhoused people are never shown.</p>
   <p>Tap an ember for the call type and how long ago it was.</p>
+  <p>Not every city means <em>tonight</em>. Some police departments publish their dispatch log days in arrears, so those cities show a longer window under a heading that says so — <strong>THIS WEEK</strong> rather than <strong>TONIGHT</strong>. The window each city uses is listed below, and the card always states the period it is actually showing.</p>
   <div class="table-wrap">
     <table>
       <thead>
@@ -510,6 +511,11 @@
           <td>Cleveland Division of Police CAD</td>
         </tr>
         <tr>
+          <td><strong>Detroit</strong></td>
+          <td><span class="label-pill pill-warn">Updated during the day</span></td>
+          <td>Detroit 911 dispatch (DPD). Runs about 16 hours behind, so this city shows a 48-hour window.</td>
+        </tr>
+        <tr>
           <td><strong>New Orleans</strong></td>
           <td><span class="label-pill pill-warn">Updated nightly</span></td>
           <td>OPCD Calls for Service via data.nola.gov. Loads in a nightly batch, so by evening the newest call you can see may be around 20 hours old.</td>
@@ -518,6 +524,16 @@
           <td><strong>Minneapolis</strong></td>
           <td><span class="label-pill pill-warn">Published each morning</span></td>
           <td>Minneapolis 911 dispatch (MPD). Published mid-morning covering the previous day, so this city shows a 48-hour window rather than 24 — otherwise the map would be empty for part of every day.</td>
+        </tr>
+        <tr>
+          <td><strong>Las Vegas</strong></td>
+          <td><span class="label-pill pill-warn">Updated each morning</span></td>
+          <td>LVMPD Calls for Service. The publishing delay drifts between roughly one and two days, so this city shows a 72-hour window under the heading <strong>THIS WEEK</strong> — a shorter one would leave the map empty for days at a time.</td>
+        </tr>
+        <tr>
+          <td><strong>Seattle</strong></td>
+          <td><span class="label-pill pill-warn">A few days behind</span></td>
+          <td>Seattle Police CAD via data.seattle.gov. SPD publishes about three and a half days in arrears, so this city shows a 7-day window under the heading <strong>THIS WEEK</strong>. It is the least current of the dispatch feeds, and labelled that way rather than dressed up as tonight.</td>
         </tr>
       </tbody>
     </table>
