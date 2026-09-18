@@ -580,14 +580,18 @@
   <h3>Safety alerts</h3>
   <p>Alerts are <strong>optional and off until you turn them on</strong>. You can enable them from the Live tab or from About &rarr; Safety alerts. There are two kinds: a heads-up when you walk into a block where reported incidents run well above the local average, and — in cities with a live dispatch feed — an occasional check for serious 911 calls within a few blocks.</p>
   <p>An alert names the street it fired on, says how unusual the area is, and shows a map of the block when you pull the notification down. Two actions are attached: open that area in the app, or go quiet until midnight.</p>
-  <p>All of this runs on your phone. Your location is never sent to our servers to produce an alert, and alerts fire on entering an area, so they cannot be triggered on demand from a standing start.</p>
+  <p>Alerts need two things from iOS to work at all: <strong>notifications allowed</strong> for SafeRoute, and <strong>Location set to &ldquo;Always&rdquo;</strong> rather than &ldquo;While Using&rdquo;. Without both, iOS has no way to reach you when you walk into an area &mdash; the feature will look switched on and quietly do nothing. From version 1.3.4 the Nearby screen says so directly, naming whichever setting is blocking it and offering a button through to the right page of Settings. If you are on an earlier version, check <em>Settings &rarr; SafeRoute</em> yourself.</p>
+
+  <p>Since 1.3.4 the watched areas also <strong>follow you</strong>. They used to be pinned to wherever you last opened SafeRoute, so walking somewhere new meant walking past them; they now re-arm as you move, covering roughly 3&nbsp;km around where the app was last open.</p>
+
+  <p>Choosing where to watch runs entirely on your phone, from crime data already cached there, and it makes no network request as you walk. Your location is never sent to our servers to produce an alert, and alerts fire on entering an area, so they cannot be triggered on demand from a standing start. When one does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
 </section>
 
 <section id="faq" class="faq">
   <h2><span class="num">04</span> Frequently asked questions</h2>
 
   <h3>Why is my safety score so low?</h3>
-  <p>The score weights nearby reported incidents by severity and proximity within a 150-metre corridor around your route, drawing on the last 12 months of published data. A score of 39%, for example, means the route runs through areas with a moderate density of recent incidents — it's an aggregate of historical reports, not a prediction of what will happen on your walk.</p>
+  <p>The score weights nearby reported incidents by severity and proximity within a 150-metre corridor around your route, using the most recent published data for your city — a rolling month in the UK, up to a year elsewhere. A score of 39% means the route runs through areas with a moderate density of recent incidents relative to the rest of that same city; scores are not comparable between cities. It's an aggregate of historical reports, not a prediction of what will happen on your walk.</p>
 
   <h3>The same route shows different scores at different times — why?</h3>
   <p>In the UK, data.police.uk publishes a new dataset on the last working day of each month, covering incidents from roughly two months earlier. US city portals update on their own schedules — typically far more frequently. Your score changes when the underlying data is refreshed, or when more or fewer reports are filed in your area. Time-of-day weighting also nudges the score — from each US city's actual reported incident times where available, or an aggregate-pattern heuristic in the UK.</p>
@@ -700,7 +704,7 @@
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="features">
   <h2><span class="num">07</span> Requesting a feature</h2>
-  <p>Every feature request gets read. SafeRoute deliberately does not run analytics or in-app feedback prompts, so direct email is your only voice into the roadmap.</p>
+  <p>Every feature request gets read. SafeRoute runs no in-app feedback prompts, and the anonymous usage analytics it does run only count which screens and features get opened &mdash; they carry no search text, no coordinates and no routes, and they cannot tell us <em>why</em> something is not working for you. Email is the only channel that can.</p>
   <p>It helps to describe the <em>problem</em> you're trying to solve, not just the solution you have in mind — sometimes a small adjustment to an existing feature solves the same problem more cleanly than a brand-new one.</p>
 
   <div class="callout">
@@ -712,7 +716,7 @@
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="privacy">
   <h2><span class="num">08</span> Privacy and your data</h2>
-  <p>SafeRoute does not require accounts, store personal identifiers, or run trackers. For full detail on what we process and your rights under UK GDPR, see the privacy policy.</p>
+  <p>SafeRoute does not require an account, does not ask for your name or email, and runs no cross-app trackers and no advertising identifier. It does record anonymous, opt-out usage analytics, which carry a pseudonymous per-installation identifier and nothing that identifies you &mdash; you can switch them off under <em>About &rarr; Anonymous analytics</em>. For full detail on what we process and your rights under UK GDPR, see the privacy policy.</p>
   <p><a href="https://minhajk21.github.io/saferoute-privacy/"><strong>Read the privacy policy →</strong></a></p>
   <p>For data subject access requests, deletion requests, or anything else covered by UK GDPR, email with the subject <code>Privacy request</code> and we'll respond within one calendar month.</p>
 </section>
