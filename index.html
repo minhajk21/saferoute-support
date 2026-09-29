@@ -655,7 +655,7 @@
 
   <p>Since 1.3.4 the watched areas also <strong>follow you</strong>. They used to be pinned to wherever you last opened SafeRoute, so walking somewhere new meant walking past them; they now re-arm as you move, covering roughly 3&nbsp;km around where the app was last open.</p>
 
-  <p>Choosing where to watch runs entirely on your phone, from crime data already cached there, and it makes no network request as you walk. Your location is never sent to our servers to produce an alert, and alerts fire on entering an area, so they cannot be triggered on demand from a standing start. When one does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
+  <p>Choosing where to watch runs on your phone, from crime data already cached there, and watching those areas sends nothing to our servers. Alerts fire on entering an area, so they cannot be triggered on demand from a standing start. One exception in the current version, 1.3.7: when iOS relaunches SafeRoute in the background to move the watched areas as you travel, the app also checks your area as if you had opened it, which sends your current location to our servers. Alerts do not need that, and we are removing it from the app. When an alert does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
 </section>
 
 <section id="faq" class="faq">
@@ -704,7 +704,7 @@
   <p>Not yet. SafeRoute needs internet for routing, search, safety data, and share sessions. The map will keep showing tiles it has already loaded, but a fresh route plan won't be possible without a connection. We're exploring offline tile caching for a future release.</p>
 
   <h3>How do I delete my data?</h3>
-  <p>Uninstall the app. SafeRoute doesn't use accounts, persistent identifiers, or stored profiles, so removing the app removes everything held on your device. The backend keeps anonymous request logs for up to 30 days for abuse prevention, then deletes them automatically. See the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> for full detail.</p>
+  <p>Uninstall the app. SafeRoute has no accounts or stored profiles, so removing the app removes everything held on your device, and a reinstall starts with a new analytics identifier. Our backend's request log holds no IP address, keeps locations only to about 1&nbsp;km, and keeps each line for about 7 days. For anything else, email with the subject <code>Privacy request</code>; the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> has the full detail.</p>
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
@@ -775,7 +775,7 @@
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="features">
   <h2><span class="num">07</span> Requesting a feature</h2>
-  <p>Every feature request gets read. SafeRoute runs no in-app feedback prompts, and the anonymous usage analytics it does run only count which screens and features get opened &mdash; they carry no search text, no coordinates and no routes, and they cannot tell us <em>why</em> something is not working for you. Email is the only channel that can.</p>
+  <p>Every feature request gets read. SafeRoute runs no in-app feedback prompts, and the anonymous usage analytics it does run only record coarse events, such as which screens and features get opened &mdash; they carry no search text, no coordinates and no routes, and they cannot tell us <em>why</em> something is not working for you. Email is the only channel that can.</p>
   <p>It helps to describe the <em>problem</em> you're trying to solve, not just the solution you have in mind — sometimes a small adjustment to an existing feature solves the same problem more cleanly than a brand-new one.</p>
 
   <div class="callout">
