@@ -655,7 +655,7 @@
 
   <p>Since 1.3.4 the watched areas also <strong>follow you</strong>. They used to be pinned to wherever you last opened SafeRoute, so walking somewhere new meant walking past them; they now re-arm as you move, covering roughly 3&nbsp;km around where the app was last open.</p>
 
-  <p>Choosing where to watch runs on your phone, from crime data already cached there, and watching those areas sends nothing to our servers. Alerts fire on entering an area, so they cannot be triggered on demand from a standing start. One exception in the current version, 1.3.7: when iOS relaunches SafeRoute in the background to move the watched areas as you travel, the app also checks your area as if you had opened it, which sends your current location to our servers. Alerts do not need that, and we are removing it from the app. When an alert does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
+  <p>Choosing where to watch runs on your phone, from crime data already cached there, and watching those areas sends nothing to our servers. Alerts fire on entering an area, so they cannot be triggered on demand from a standing start. One exception in the current version, 1.3.7: when iOS relaunches SafeRoute in the background to move the watched areas as you travel, the app also checks your area as if you had opened it, which sends your current location to our servers. Alerts do not need that, and we are removing it from the app. The check for serious 911 calls does send your position to our server, in the background and when you open the app; our server cuts it to about 1&nbsp;km before using or logging it. When an alert does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
 </section>
 
 <section id="faq" class="faq">
@@ -690,12 +690,14 @@
   </ul>
 
   <h3>My share link expired — what happened?</h3>
-  <p>Share links auto-expire to protect your privacy. They end automatically when:</p>
+  <p>Share links auto-expire to protect your privacy. The link stops working:</p>
   <ul>
-    <li>You mark your walk as arrived</li>
-    <li>Four hours pass since the link was created — whichever comes first</li>
+    <li>About 30 minutes after sharing stops — when you end navigation, including when you reach your destination and close it (but not when you choose <em>Go</em> in <em>Find Help</em>; see below), when you share another walk, or when you tap <em>Stop sharing</em> on Apple Watch during navigation</li>
+    <li>About 4 hours 15 minutes after it was created, if sharing never stops — for example, if SafeRoute was closed after you made the link</li>
   </ul>
-  <p>Once expired, the page tells your recipient the walk has ended. Create a new link from the route screen if you want to continue sharing.</p>
+  <p>Before then, the page tells your recipient that you stopped sharing or, once the link is 4 hours old, that it will close soon; it does not say that you arrived. A link also stops working if our server restarts. Create a new link from the route screen if you want to continue sharing.</p>
+  <p>One way of ending navigation does not stop sharing: choosing <em>Go</em> on a place in <em>Find Help</em>, on your iPhone or Apple Watch. After that the link stays open, the page keeps showing you as walking and, later, as later than expected, <em>Stop sharing</em> disappears from your watch, and with <em>Live location</em> your next navigation sends its positions to the same link. To stop it, end that next navigation in the usual way, tap <em>Stop sharing</em> on your watch during it, or share another walk; otherwise it runs to the 4 hours 15 minutes above.</p>
+  <p><strong>Correction, 30 September 2026:</strong> until then this answer said that links end when you mark your walk as arrived or four hours after they are made, and that the page then tells your recipient the walk has ended. Because of a fault in the app, which we will fix in version 1.3.9, no released version has ever reported an arrival. The <a href="https://minhajk21.github.io/saferoute-privacy/#share-my-walk">privacy policy</a> explains what happens instead, and its section 13 lists the other things we published about sharing that were wrong. We have also replaced a troubleshooting entry below, which said that share links made before May 2026 might fail with an "Unauthorized" error after a security update: share links have needed no key since 9 May 2026, and any link from before then has long since expired.</p>
 
   <h3>The Live Activity disappeared from my Lock Screen</h3>
   <p>iOS imposes an eight-hour hard limit on Live Activities and ends them automatically at that point. They can also be dismissed by swiping. SafeRoute will only restart the Live Activity when you begin a new route — it won't re-add itself to a dismissed Lock Screen during an active walk.</p>
@@ -704,7 +706,7 @@
   <p>Not yet. SafeRoute needs internet for routing, search, safety data, and share sessions. The map will keep showing tiles it has already loaded, but a fresh route plan won't be possible without a connection. We're exploring offline tile caching for a future release.</p>
 
   <h3>How do I delete my data?</h3>
-  <p>Uninstall the app. SafeRoute has no accounts or stored profiles, so removing the app removes everything held on your device, and a reinstall starts with a new analytics identifier. Our backend's request log holds no IP address, keeps locations only to about 1&nbsp;km, and keeps each line for about 7 days. For anything else, email with the subject <code>Privacy request</code>; the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> has the full detail.</p>
+  <p>Uninstall the app. SafeRoute has no accounts or stored profiles, so removing the app removes everything held on your device, and a reinstall starts with a new analytics identifier. Our backend's request log holds no IP address, keeps locations only to about 1&nbsp;km, and keeps each line for about 7 days; its cache of crime data keeps the box around an area you check or a route you plan, to about 10&nbsp;m, for up to a day (longer in Dallas), in memory and with no identifier. Deleting the app does not end a walk you have shared: it stays visible to anyone with the link until it expires (see <em>My share link expired</em> above). To end it sooner, end navigation (choosing <em>Go</em> in <em>Find Help</em> does not count; see above) or tap <em>Stop sharing</em> on Apple Watch during navigation, before you delete the app. For anything else, email with the subject <code>Privacy request</code>; the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> has the full detail.</p>
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
@@ -742,8 +744,8 @@
           <td>In low-density areas, the safest path and the shortest path are often the same. The app shows multiple candidates labelled <em>Recommended</em>, <em>Safest</em>, and <em>Shortest Path</em> — compare the safety scores to see the trade-off.</td>
         </tr>
         <tr>
-          <td><strong>"Unauthorized" error on share link</strong></td>
-          <td>Older share links created before May 2026 may not work after our backend security update. Create a fresh link from the app.</td>
+          <td><strong>"Link not found" on a share link</strong></td>
+          <td>The walk has ended and been deleted (see <em>My share link expired</em> above), or our server restarted, which ends every shared walk. Create a fresh link from the app.</td>
         </tr>
       </tbody>
     </table>
@@ -769,7 +771,7 @@
     <a href="mailto:minhaj@safe-route.app?subject=Bug%20report"><strong>minhaj@safe-route.app</strong></a> · subject: <code>Bug report</code>
   </div>
 
-  <p>If your bug relates to share links, please don't send the link itself — while it works, anyone who opens it can see your destination, your planned route and, if you chose <em>Live location</em>, where you are. Instead, tell me roughly when you created it and whether you chose <em>Live location</em> or <em>Route only</em>.</p>
+  <p>If your bug relates to share links, please don't send the link itself — while it works, anyone who opens it can see your destination, your planned route and, if you chose <em>Live location</em>, where you are. Instead, tell me roughly when you created it and whether you chose <em>Live location</em> or <em>Route only</em>. Until 30 September 2026 this page asked you to include the link and called share links anonymous and free of personal data; any link sent to us that way stopped working within about 4 hours 45 minutes of being made, and none can be opened now.</p>
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
@@ -861,7 +863,7 @@
     <a href="https://minhajk21.github.io/saferoute-privacy/">Privacy policy</a>
     <a href="mailto:minhaj@safe-route.app">minhaj@safe-route.app</a>
   </nav>
-  <p>This support page was last reviewed on 26 September 2026. SafeRoute is an independent project and is not affiliated with the UK Government, Police Scotland, the NYPD or other US, Canadian, or Mexican police departments, OpenStreetMap, Mapbox, Hoyo de Crimen, Apple, or any other named party. UK crime data is sourced from <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a> under the Open Government Licence v3.0; US and Canadian crime data comes from each city's official municipal open-data portal; Mexico City data comes from the FGJ via the Hoyo de Crimen open API.</p>
+  <p>This support page was last reviewed on 30 September 2026. SafeRoute is an independent project and is not affiliated with the UK Government, Police Scotland, the NYPD or other US, Canadian, or Mexican police departments, OpenStreetMap, Mapbox, Hoyo de Crimen, Apple, or any other named party. UK crime data is sourced from <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a> under the Open Government Licence v3.0; US and Canadian crime data comes from each city's official municipal open-data portal; Mexico City data comes from the FGJ via the Hoyo de Crimen open API.</p>
 </footer>
 
 </div>
