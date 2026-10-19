@@ -454,7 +454,7 @@
 <!-- ─────────────────────────────────────────────────────── -->
 <section id="coverage">
   <h2><span class="num">02</span> Where SafeRoute works</h2>
-  <p>SafeRoute adapts to wherever you are. In the United Kingdom, safety scoring is built on <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>; in the United States and Canada, it uses each covered city's official open crime data; in Mexico City it uses the public prosecutor's (FGJ) open crime data. The app automatically picks the right source, emergency number and safe-place data for your location. Once it knows where you are, the emergency number it offers is 999 in the UK and 911 in the covered US, Canadian and Mexican cities listed below. Anywhere else, from version 1.3.8 the app offers 911 in North America if your iPhone's region is set to the US, Canada or Mexico, and 112 otherwise; earlier versions offer 999 or 911 there. The app is available in English and Spanish (Spanish on Spanish-language devices). In versions before 1.4, some of it is only in English: the Home Screen and Lock Screen widgets, the Live Activity, the Apple Watch app, some screens and messages in the iPhone app, such as the alert settings and parts of the Live tab, and the message the app writes for you when you share a walk. From version 1.4 all of these are in Spanish too. In every version, the names of datasets and licences, the call types on the Live tab, and the page the person you send a share link to opens stay in English, whichever language the message is in. From version 1.4 the credits in About are in Spanish too, except the names of datasets and licences, &ldquo;Powered by&rdquo; taglines and the credits for home values; in earlier versions they are in English.</p>
+  <p>SafeRoute adapts to wherever you are. In the United Kingdom, safety scoring is built on <a href="https://data.police.uk" target="_blank" rel="noopener">data.police.uk</a>; in the United States and Canada, it uses each covered city's official open crime data; in Mexico City it uses the public prosecutor's (FGJ) open crime data. The app automatically picks the right source, emergency number and safe-place data for your location. Once it knows where you are, the emergency number it offers is 999 in the UK and 911 in the covered US, Canadian and Mexican cities listed below. Anywhere else, from version 1.3.8 the app offers 911 in North America if your iPhone's region is set to the US, Canada or Mexico, and 112 otherwise; earlier versions offer 999 or 911 there. The app is available in English and Spanish (Spanish on Spanish-language devices). In versions before 1.4, some of it is only in English: the Home Screen and Lock Screen widgets, the Live Activity, the Apple Watch app, some screens and messages in the iPhone app, such as the alert settings and parts of the Live tab, and the message the app writes for you when you share a walk. From version 1.4 all of these are in Spanish too. In every version, the names of datasets and licences, the call types on the Live tab, and the page the person you send a share link to opens stay in English, whichever language the message is in. From version 1.4 the credits in About are in Spanish too, except the names of datasets and licences, some publishers' names, &ldquo;Powered by&rdquo; taglines, copyright notices, and the credit lines for school ratings and home values, which are kept as published; in earlier versions they are in English.</p>
   <p>Safety scoring is available in every city listed below. The <a href="#live">Live tab</a> &mdash; recent 911 calls and live street cameras &mdash; is a separate, smaller list, because it depends on a city publishing a live feed rather than periodic crime reports.</p>
 
   <h3>United Kingdom</h3>
@@ -565,7 +565,7 @@
   <p>The Live tab only appears where we have a feed for it. In every other covered city the rest of the app works normally — there is simply nothing live to show, and we would rather show nothing than imply a quiet night we cannot evidence.</p>
 
   <h3>911 calls police responded to</h3>
-  <p>Glowing markers ("embers") are <strong>calls that police were dispatched to</strong> — not confirmed crimes. A call can turn out to be a misunderstanding, a duplicate, or nothing at all. We filter out call types that are not offences against a person or property, and we deliberately exclude categories where a marker would say more about who was reported than about what happened — mental-health and welfare calls, "suspicious person" reports, and calls about unhoused people are never shown.</p>
+  <p>Glowing markers ("embers") are <strong>calls that police were dispatched to</strong> — not confirmed crimes. A call can turn out to be a misunderstanding, a duplicate, or nothing at all. We show only call types that we can match to a kind of offence: violence, robbery, burglary, theft, vehicle crime, criminal damage, weapons, drugs, and some sexual and public-order offences. We deliberately leave out call types where a marker would say more about who was reported than about what happened: mental-health and welfare calls, "suspicious person" reports, and calls logged as being about unhoused people are never shown. San Francisco's map does show calls SFPD logs as <em>Prowler</em> or <em>Trespasser</em>, and the New Orleans map can include calls about trespassing.</p>
   <p>Tap an ember for the call type and how long ago it was.</p>
   <p>Not every city means <em>tonight</em>. Some police departments publish their dispatch log days in arrears, so those cities show a longer window under a heading that says so — <strong>THIS WEEK</strong> rather than <strong>TONIGHT</strong>. The window each city uses is listed below, and the card always states the period it is actually showing.</p>
   <div class="table-wrap">
@@ -577,12 +577,12 @@
         <tr>
           <td><strong>San Francisco</strong></td>
           <td><span class="label-pill pill-yes">Near real-time</span></td>
-          <td>SFPD dispatched calls via DataSF. Some sensitive calls have their location withheld by SFPD, so the map under-counts by design.</td>
+          <td>SFPD dispatched calls via DataSF, over the last 24 hours. Some sensitive calls have their location withheld by SFPD, so the map under-counts by design.</td>
         </tr>
         <tr>
           <td><strong>Cleveland</strong></td>
-          <td><span class="label-pill pill-yes">Updated during the day</span></td>
-          <td>Cleveland Division of Police CAD</td>
+          <td><span class="label-pill pill-warn">Updated nightly</span></td>
+          <td>Cleveland Division of Police CAD. Loads in a nightly batch, so this city shows a 48-hour window rather than 24.</td>
         </tr>
         <tr>
           <td><strong>Detroit</strong></td>
@@ -592,7 +592,7 @@
         <tr>
           <td><strong>New Orleans</strong></td>
           <td><span class="label-pill pill-warn">Updated nightly</span></td>
-          <td>OPCD Calls for Service via data.nola.gov. Loads in a nightly batch, so by evening the newest call you can see may be around 20 hours old.</td>
+          <td>OPCD Calls for Service via data.nola.gov. Loads in a nightly batch, so this city shows a 48-hour window rather than 24, and by evening the newest call you can see may be around 20 hours old.</td>
         </tr>
         <tr>
           <td><strong>Minneapolis</strong></td>
@@ -612,6 +612,7 @@
       </tbody>
     </table>
   </div>
+  <p><strong>Correction, [RELEASE DATE]:</strong> from 30 August 2026 until then, this table said that Cleveland's dispatch feed is updated during the day. It is loaded once a night, and since 1 October 2026 the Live tab has shown the last 48 hours there.</p>
 
   <h3>Live street cameras</h3>
   <p>Camera pins show the latest public view from a road authority's own traffic cameras. Stills, and London's short clips, are fetched by our server, not by your phone, except the stills from New York City DOT's street-corner cameras: NYC DOT's server does not answer ours, so your phone loads those pictures straight from NYC DOT. Live video in New York and Las Vegas is the other exception: it plays straight from the transport authority's streaming server. In both cases that server therefore sees your device's IP address (the <a href="https://minhajk21.github.io/saferoute-privacy/">privacy policy</a> explains this). No camera can be controlled from the app. These are the same public feeds the authorities publish themselves.</p>
@@ -652,7 +653,7 @@
   <p>Camera coverage is uneven by design — these are traffic cameras, so they cluster on main roads and junctions rather than spreading evenly across residential streets.</p>
 
   <h3>Safety alerts</h3>
-  <p>Alerts are <strong>optional and off until you turn them on</strong>. You can turn them on in About, under <em>Alerts</em>, and in recent versions also from the Live tab or from the offer on the Nearby tab. There are two kinds: a heads-up when you walk into a block where reported incidents run well above the local average, and — in cities with a live dispatch feed — an occasional check for serious 911 calls within a few blocks.</p>
+  <p>Alerts are <strong>optional and off until you turn them on</strong>. You can turn them on in About, under <em>Alerts</em>, and in recent versions also from the Live tab or from the offer on the Nearby tab. There are two kinds: a heads-up when you walk into a block where reported incidents run well above the local average, and — where a city's 911 dispatch data is close to real time, which today means San Francisco — an occasional check for serious 911 calls within a few blocks. That check reports only calls from the last 90 minutes, so in the other cities in the 911 table above, whose newest published calls are hours or days old, it does not fire in practice. If you turn it on, it still runs wherever you are; what it sends is described below.</p>
   <p>An alert names the street it fired on, says how unusual the area is, and shows a map of the block when you pull the notification down. Two actions are attached: open that area in the app, or go quiet until midnight.</p>
   <p>Alerts need two things from iOS to work at all: <strong>notifications allowed</strong> for SafeRoute, and <strong>Location set to &ldquo;Always&rdquo;</strong> rather than &ldquo;While Using&rdquo;. Without both, iOS has no way to reach you when you walk into an area &mdash; the feature will look switched on and quietly do nothing. From version 1.3.4 the Nearby screen says so directly, naming whichever setting is blocking it and offering a button through to the right page of Settings. If you are on an earlier version, check <em>Settings &rarr; SafeRoute</em> yourself.</p>
 
@@ -660,6 +661,7 @@
 
   <p>Choosing where to watch runs on your phone, from crime data already cached there, and watching those areas sends nothing to our servers. Alerts fire on entering an area, so they cannot be triggered on demand from a standing start. Versions before 1.3.8 (released on 1 October 2026) have one exception: when iOS relaunches SafeRoute in the background to move the watched areas as you travel, the app also checks your area as if you had opened it, which sends your current location to our servers. Alerts do not need that, and from version 1.3.8 a background relaunch to move the watched areas sends nothing to our servers. The check for serious 911 calls does send your position to our server, in the background and when you open the app. Since version 1.3.8 the app rounds it to about 1&nbsp;km before sending it, and our server rounds it again; earlier versions send it to about 1&nbsp;m, and our server cuts it to about 1&nbsp;km before using or logging it. When an alert does fire, the app asks iOS for the street name and a small map picture of that block so the notification can tell you where it means &mdash; those are Apple's own Maps services, the same ones any app uses to turn a coordinate into an address.</p>
   <p><strong>Correction, 4 October 2026:</strong> from 30 August to 29 September 2026 this section said that your location is never sent to our servers to produce an alert, and from 18 September also that choosing where to watch makes no network request as you walk. Neither was true. <em>Fresh incident nearby</em> has sent your position to our server since version 1.3.0 (August 2026), and in versions 1.3.0 to 1.3.7 a background relaunch for <em>Area heads-up</em> can send your location, as described above. We changed the text on 29 September 2026 without saying that it had been wrong.</p>
+  <p><strong>Correction, [RELEASE DATE]:</strong> from 30 August 2026 until then, this section said that the check for serious 911 calls is made in cities with a live dispatch feed, which suggested that it could alert you in any city in the 911 table above. It reports only calls from the last 90 minutes, so in practice it can alert you only in San Francisco.</p>
 </section>
 
 <section id="faq" class="faq">
@@ -684,13 +686,12 @@
   <h3>How do I turn safety alerts off?</h3>
   <p>In About, under <em>Alerts</em>, switch off <em>Area heads-up</em> and <em>Fresh incident nearby</em>. They are off by default, so you only have them if you turned them on. To silence them just for the rest of the day, pull down any alert and choose "Quiet for today" — that mutes both kinds until midnight without changing your setting.</p>
 
-  <h3>Why does my Apple Watch say "waiting for iPhone"?</h3>
-  <p>The watch app communicates with the iPhone via Apple's WatchConnectivity framework. Try:</p>
+  <h3>Why does my Apple Watch say "Phone offline" or "Connecting&hellip;"?</h3>
+  <p>The watch app gets everything from SafeRoute on your iPhone, through Apple's WatchConnectivity framework. Try:</p>
   <ul>
     <li>Unlock both your iPhone and your Watch</li>
     <li>Make sure Bluetooth is on (or both devices are on the same Wi-Fi)</li>
     <li>Open SafeRoute on iPhone once — this wakes the connection</li>
-    <li>Pull-to-refresh on the watch screen</li>
   </ul>
 
   <h3>What happens when I reach my destination?</h3>
@@ -701,7 +702,7 @@
 
   <h3>What does Find Help do?</h3>
   <p><em>Find Help</em> shows the closest places that can help &mdash; the nearest hospital, police station and 24-hour shop, from OpenStreetMap &mdash; with a button to call the emergency number for where you are. On your iPhone it is the <em>HELP</em> button among the safety buttons during navigation; on Apple Watch it is <em>Find Help</em> under the safety options. From version 1.4, the iPhone asks <em>Call 999?</em> (or 911 or 112) before it dials, says that it will dial the emergency services and that you should call only in a real emergency, and dials only if you tap <em>Call 999</em> (or 911 or 112); <em>Cancel</em> dials nothing. A place's own <em>Call</em> button asks the same when the number listed for that place is an emergency number, as it is for some police stations. In versions before 1.4, SafeRoute's own call buttons in <em>Find Help</em> on your iPhone do not ask first (the emergency button shown during navigation does).</p>
-  <p>From version 1.4, <em>Find Help</em> shows only places it has looked up within about 300&nbsp;m of where you are now, with distances measured from the point it looked up from. Until your iPhone has a current location it says <em>Waiting for your location&hellip;</em>, and it looks again as you move. If the places cannot be loaded, it says <em>Couldn't load places near you</em>, points you to the emergency number and offers <em>Try again</em>; on Apple Watch it says <em>Location unknown</em> or <em>Couldn't load nearby places</em>. In versions before 1.4, because of a fault in the app, <em>Find Help</em> can show places it looked up earlier for somewhere else, such as where your previous walk ended or wherever the app last looked up places, even in another city, with distances measured from there, most often while it is still loading or when it cannot load new ones. If the places or distances look wrong, do not rely on them: use the emergency number.</p>
+  <p>From version 1.4, <em>Find Help</em> shows only places from a lookup made within about 300&nbsp;m of where you are now, with distances measured from where you are now. Until your iPhone has a current location it says <em>Waiting for your location&hellip;</em>, and it looks again as you move. If the places cannot be loaded, it says <em>Couldn't load places near you</em>, points you to the emergency number and offers <em>Try again</em>; on Apple Watch it says <em>Location unknown</em> or <em>Couldn't load nearby places</em>. In versions before 1.4, because of a fault in the app, <em>Find Help</em> can show places it looked up earlier for somewhere else, such as where your previous walk ended or wherever the app last looked up places, even in another city, with distances measured from there, most often while it is still loading or when it cannot load new ones. If the places or distances look wrong, do not rely on them: use the emergency number.</p>
   <p>From version 1.4, choosing <em>Go</em> on a place ends the walk you are on and, once the app has found a route, starts navigation to that place straight away, from where you are and with no stops. If you chose <em>Go</em> on your watch while your iPhone was locked or in your pocket, navigation starts when you next open SafeRoute on your iPhone, if that is within about 10 minutes; after that, the route waits on the route screen for you to start it. If you are sharing your walk, the app sends no positions until navigation to the place starts, so until then the person you shared it with sees your last position; if it never starts, their page goes on saying that you are heading to that place until sharing stops or the link stops working. In versions before 1.4, <em>Go</em> ends navigation and puts the place on the route screen as your destination, keeping your original start and any stops, and you find routes and start the new walk yourself. If you are sharing your walk, see <em>My share link expired</em> below for what the person you shared it with sees.</p>
 
   <h3>My share link expired — what happened?</h3>
@@ -751,7 +752,7 @@
         </tr>
         <tr>
           <td><strong>Off-route alerts not firing</strong></td>
-          <td>SafeRoute needs background location access to detect deviations. Go to <em>Settings → SafeRoute → Location</em> and ensure it's set to <em>Always</em>. On the Watch, ensure motion permissions are granted.</td>
+          <td>Off-route warnings come during navigation and need SafeRoute's location access: in <em>Settings → SafeRoute → Location</em>, make sure it is not set to <em>Never</em>. <em>While Using the App</em> is enough (<em>Always</em> is needed only for safety alerts). The watch shows the warning your iPhone detects and needs no permission of its own; if it shows nothing, check that it is connected (see the Apple Watch question in <a href="#faq">section 04</a>).</td>
         </tr>
         <tr>
           <td><strong>App crashes immediately on launch</strong></td>
@@ -762,8 +763,8 @@
           <td>The recipient must keep the link page open in their browser. iOS Safari can throttle background tabs after some time. Asking the recipient to keep the tab visible (or to tap refresh) usually fixes this. Once the link is 4 hours old, the page stops showing new positions by design, and from version 1.4 the app stops sending them and, if you are navigating, tells you that sharing has ended (see <em>My share link expired</em> above).</td>
         </tr>
         <tr>
-          <td><strong>Route looks identical with and without safety on</strong></td>
-          <td>In low-density areas, the safest path and the shortest path are often the same. The app shows multiple candidates labelled <em>Recommended</em>, <em>Safest</em>, and <em>Shortest Path</em> — compare the safety scores to see the trade-off.</td>
+          <td><strong>The suggested route is just the shortest one</strong></td>
+          <td>In low-density areas, the shortest route often also has the highest safety score, and the app then labels it <em>Best overall</em>. Otherwise the first route is labelled <em>Recommended</em>, and the others <em>Fewest incidents</em> (the highest safety score; <em>Safest</em> in versions before 1.3.4), <em>Shortest path</em> or <em>Alternative</em>. Compare their safety scores to see the trade-off.</td>
         </tr>
         <tr>
           <td><strong>"Link not found" on a share link</strong></td>
@@ -772,6 +773,7 @@
       </tbody>
     </table>
   </div>
+  <p><strong>Correction, [RELEASE DATE]:</strong> from 12 May 2026 until then, this table said that off-route warnings need SafeRoute's location access set to <em>Always</em>, and motion permissions on Apple Watch. No version has needed either: <em>While Using the App</em> is enough, and the watch app asks for no permissions. Over the same period, the Apple Watch question in <a href="#faq">section 04</a> asked about a &ldquo;waiting for iPhone&rdquo; message and suggested pulling down to refresh the watch screen; the watch app has neither.</p>
 </section>
 
 <!-- ─────────────────────────────────────────────────────── -->
